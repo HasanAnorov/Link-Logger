@@ -1,2 +1,2 @@
 The .scss (Sass) files are only available in the pro version.
-You can buy it from: https://bootstrapmade.com/yummy-bootstrap-restaurant-website-template/
+You can buy it from: https://bootstrapmade.com/knight-free-bootstrap-theme/
