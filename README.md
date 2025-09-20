@@ -14,3 +14,29 @@ metadata about clicked URLs and connections.
 - **Browser redirection**: when an agent link is clicked, the end-user sees the intended website while
   Link-Logger transparently logs and forwards metadata.
 - **Scalable & secure**: built on Django and DRF, supporting modular configuration and production deployment.
+
+## Architecture Overview
+
+```text
+[ Agent Link Clicked ]
+          |
+          v
+   Link-Logger Server
+          |
+   +-------------------------+
+   | Extract Metadata        |
+   | - IP address            |
+   | - User-Agent            |
+   | - Referrer / Headers    |
+   +-------------------------+
+          |
+          v
+   Forward important data --> KanoRAT Logging Section
+          |
+          v
+   Redirect to example website
+```
+
+- **Frontend/Client**: Any browser or device that clicks on the agent link.
+- **Backend (this repo)**: Django REST Framework API that processes the request, extracts metadata, and sends logs to KanoRAT.
+- **KanoRAT**: Displays and stores the logs for operators.
